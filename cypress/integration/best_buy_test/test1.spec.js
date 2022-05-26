@@ -3,13 +3,13 @@
 
 
 describe("This is the first test today", ()=>{
-        before(()=>{
-            cy.fixtures("best_buy_fixtures/products.json").then((data)=>{
-        this.bestdata = data
+        beforeEach(function(){
+            cy.fixture("best_buy_fixtures/products.json").then((bestdata)=>{
+       this.bestdata = bestdata
             })
         })
 
-        it('This is step one', ()=>{
-            console.log(this.bestdata)
+        it('This is step one',function (){
+            cy.log(this.bestdata)
         })
 })
